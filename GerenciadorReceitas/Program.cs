@@ -1,4 +1,6 @@
 
+using Microsoft.EntityFrameworkCore;
+
 namespace GerenciadorReceitas
 {
     public class Program
@@ -14,7 +16,8 @@ namespace GerenciadorReceitas
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Configuration.GetConnectionString("Conexao");
+            var connectionString = builder.Configuration.GetConnectionString("Default");
+            builder.Services.AddDbContext<GerenciadorReceitasDbContext>(options => options.UseSqlServer(connectionString));
 
             var app = builder.Build();
 
