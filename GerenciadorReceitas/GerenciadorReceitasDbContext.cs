@@ -17,10 +17,10 @@ namespace GerenciadorReceitas
             {
                 entity.HasKey(x => x.Id);
             });
-            //OnModelCreatingPartial(builder);
+            OnModelCreatingPartial(builder);
         }
 
-        //partial void OnModelCreatingPartial(ModelBuilder builder);
+        partial void OnModelCreatingPartial(ModelBuilder builder);
 
     }
 }

@@ -36,10 +36,5 @@ namespace GerenciadorReceitas.Controllers
             _context.SaveChanges();
             return CreatedAtAction(nameof(GetReceita), new { id = receita.Id }, receita);
         }
-
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
     }
 }

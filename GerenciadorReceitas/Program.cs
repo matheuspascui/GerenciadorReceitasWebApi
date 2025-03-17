@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace GerenciadorReceitas
 {
@@ -16,8 +17,9 @@ namespace GerenciadorReceitas
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            var connectionString = builder.Configuration.GetConnectionString("Default");
-            builder.Services.AddDbContext<GerenciadorReceitasDbContext>(options => options.UseSqlServer(connectionString));
+            string connectionString = builder.Configuration.GetConnectionString("Default");
+            builder.Services.AddDbContext<GerenciadorReceitasDbContext>(options => options.UseNpgsql(connectionString));
+            
 
             var app = builder.Build();
 

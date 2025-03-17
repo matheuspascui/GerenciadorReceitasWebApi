@@ -16,8 +16,11 @@ namespace GerenciadorReceitas.Models
         [Required, MaxLength(1200)]
         public string ModoDePreparo { get; set; } = string.Empty;
         [Required]
+        [MaxLength(1200)]
         public List<string> Ingredientes { get; set; } = new List<string>();
+        [MaxLength(1200)]
         public List<string> Categorias { get; set; } = new List<string>();
+        [MaxLength(50)]
         public string Nacionalidade { get; set; } = string.Empty;
         public DateTime DataCriacao { get; }
 
